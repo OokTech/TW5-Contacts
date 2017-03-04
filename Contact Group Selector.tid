@@ -1,0 +1,18 @@
+caption: Contact Group Selector
+tags: [[New Contact Form]]
+title: $:/plugins/OokTech/Contacts/Contact Group Selector
+
+<$select
+    tiddler='$:/plugins/OokTech/Contacts/ContactTemp'
+    field='group'
+>
+    <$list
+        filter='[tag[ContactGroup]]'
+    >
+        <option>
+            <$view
+                field='title'
+            />
+        </option>
+    </$list>
+</$select>

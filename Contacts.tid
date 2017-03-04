@@ -1,0 +1,17 @@
+caption: Contacts
+contact_display_template: $:/plugins/OokTech/Contacts/ContactDisplayTemplate1
+contact_list_template: $:/plugins/OokTech/Contacts/GroupContactListTemplate
+list_macro: textSliderNoButton
+title: $:/plugins/OokTech/Contacts/Contacts
+
+\define contactsTabsMacro()
+
+<<tabs """$(thing)$ [[$:/plugins/OokTech/Contacts/New Contact Form]] [[$:/plugins/OokTech/Contacts/Contacts Settings]]""" """$(thing)$""">>
+
+\end
+
+<$set
+    name=thing value={{!!contact_list_template}}
+>
+    <<contactsTabsMacro {{!!contact_list_template}}>>
+</$set>

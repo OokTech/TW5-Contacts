@@ -1,0 +1,11 @@
+caption: Contacts List
+display_name: Simple Contacts List
+tags: Templates ContactListTemplate
+title: $:/plugins/OokTech/Contacts/SimpleContactListTemplate
+
+<$list
+    filter=[tag[Contacts]]
+    template={{$:/plugins/OokTech/Contacts/Contacts!!contact_display_template}}
+>
+
+</$list>

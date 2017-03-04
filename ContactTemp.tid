@@ -1,0 +1,32 @@
+blurb:
+cell_phone_number:
+cellphonenumber:
+city:
+country:
+emailaddress:
+first_name:
+firstname:
+group: Example Group
+home_phone_number:
+homephonenumber:
+last_name:
+lastname:
+nick_name:
+nickname:
+other_email_address:
+otheremailaddress:
+personal_email_address:
+personalemailaddress:
+phonenumber: something else
+state_or_provence:
+stateprovence:
+street_address:
+streetaddress:
+tags: Templates
+title: $:/plugins/OokTech/Contacts/ContactTemp
+work_email_address:
+work_phone_number:
+workemailaddress:
+workphonenumber:
+zip_code:
+zipcode:

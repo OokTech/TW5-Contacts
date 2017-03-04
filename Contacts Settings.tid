@@ -1,0 +1,97 @@
+blurb: Settings for the Contacts tiddler
+caption: Contacts Settings
+tags: [[Wiki Settings]]
+title: $:/plugins/OokTech/Contacts/Contacts Settings
+
+!!Contact Display template to use:
+This is how each individual contact will be displayed in the list of contacts<br>
+
+<div
+    class='tc-tiddler-frame'
+    style='width:100%; background-color:#fafafa'
+>
+    <$select
+        tiddler='$:/plugins/OokTech/Contacts/Contacts'
+        field='contact_display_template'
+    >
+        <$list
+            filter='[plugintiddlers[]tag[ContactDisplayTemplate]][tag[ContactDisplayTemplate]]'
+        >
+            <option
+                value={{!!title}}
+            >
+                <$view
+                    field='display_name'
+                />
+            </option>
+        </$list>
+    </$select>
+
+    <$tiddler
+        tiddler={{$:/plugins/OokTech/Contacts/Contacts!!contact_display_template}}
+    >
+        <$transclude
+            tiddler={{!!settings_tiddler}}
+        />
+    </$tiddler>
+
+    <br>
+    Preview:
+    <br>
+    <div
+        class='tc-tiddler-frame'
+        style='width:100%; background-color:#f0f0f0'
+    >
+        <$tiddler
+            tiddler={{$:/plugins/OokTech/Contacts/Contacts!!contact_display_template}}
+        >
+            <$transclude/>
+        </$tiddler>
+    </div>
+</div>
+
+!!Contact List template to use:
+This is the template used to generate the list of contacts, click on the name to see the template (How it looks changes based on the display template selected above).<br>
+<div
+    class='tc-tiddler-frame'
+    style='width:100%; background-color:#fafafa'
+>
+
+    <$select
+        tiddler='Contacts'
+        field='contact_list_template'
+    >
+        <$list
+            filter='[plugintiddlers[]tag[ContactListTemplate]][tag[ContactListTemplate]]'
+        >
+            <option
+                value={{!!title}}
+            >
+                <$view
+                    field=display_name
+                />
+            </option>
+        </$list>
+    </$select>
+
+    <$tiddler
+        tiddler={{$:/plugins/OokTech/Contacts/Contacts!!contact_list_template}}
+    >
+        <$transclude
+            tiddler={{!!settings_tiddler}}
+        />
+    </$tiddler>
+    <br>
+    Preview:
+    <br>
+    <div
+        class='tc-tiddler-frame'
+        style='width:100%; background-color:#f0f0f0'
+    >
+        <$tiddler
+            tiddler={{$:/plugins/OokTech/Contacts/Contacts!!contact_list_template}}
+        >
+            <$transclude/>
+        </$tiddler>
+    </div>
+</div>

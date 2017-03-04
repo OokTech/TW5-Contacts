@@ -1,0 +1,54 @@
+caption: Contact Display Template 1 Settings
+tags: [[Contacts Settings]]
+title: $:/plugins/OokTech/Contacts/ContactDisplayTemplate1 Settings
+
+<p
+    class='tc-tiddler-frame'
+    style='width:100%; background-color:#f1f1f1'
+>
+    ''Settings'':
+    <br>
+    __Button Style__:
+    <$select
+        tiddler='$:/plugins/OokTech/Contacts/ContactDisplayTemplate1'
+        field="button_type"
+    >
+        <option
+            value='tc-btn-invisible'
+        >
+            No button
+        </option>
+        <option
+            value=''
+        >
+            Normal button
+        </option>
+    </$select>
+    <br>
+    __Text Style__:
+    <$select
+        tiddler='$:/plugins/OokTech/Contacts/ContactDisplayTemplate1'
+        field="text_style"
+    >
+        <option
+            value=""
+        >
+            Plain text
+        </option>
+        <option
+            value="''"
+        >
+            Bold text
+        </option>
+        <option
+            value="//"
+        >
+            Italic text
+        </option>
+        <option
+            value="__"
+        >
+            Underlined text
+        </option>
+    </$select>
+</p>

@@ -1,0 +1,95 @@
+blurb: A fillable form to add new contacts
+caption: New Contact Form
+tags: Tools
+title: $:/plugins/OokTech/Contacts/New Contact Form
+
+\define getFullName() $(FirstName)$ $(LastName)$ ($(NickName)$)
+
+|!First Name |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="firstname" placeholder="First Name"  size="40"/>|
+|!Last Name |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="lastname" placeholder="Last Name"  size="40"/>|
+|!Nick Name |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="nickname" placeholder="Nick Name"  size="40"/>|
+|!Personal Email Address |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="personalemailaddress" placeholder="Personal Email Address"  size="40"/>|
+|!Work Email Address |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="workemailaddress" placeholder="Work Email Address"  size="40"/>|
+|!Other Email Address |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="otheremailaddress" placeholder="Other Email Address"  size="40"/>|
+|!Home Phone Number |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="homephonenumber" placeholder="Home Phone Number"  size="40"/>|
+|!Cell Phone Number |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="cellphonenumber" placeholder="Cell Phone Number"  size="40"/>|
+|!Work Phone Number |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="workphonenumber" placeholder="Work Phone Number"  size="40"/>|
+|!Street Address |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="streetaddress" placeholder="Street Address"  size="40"/>|
+|!City |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="city" placeholder="City"  size="40"/>|
+|!State/Provence |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="stateprovence" placeholder="State/Provence"  size="40"/>|
+|!Zip Code |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="zipcode" placeholder="Zip Code"  size="40"/>|
+|!Country |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="country" placeholder="Country"  size="40"/>|
+|!Blurb |<$edit-text tiddler="$:/plugins/OokTech/Contacts/ContactTemp" field="blurb" placeholder="Quick description"  size="40"/>|
+|!Group |<<newContactAddGroup2>> <<newContactAddGroup1>>|
+
+<$vars
+    FirstName={{$:/plugins/OokTech/Contacts/ContactTemp!!firstname}}
+    LastName={{$:/plugins/OokTech/Contacts/ContactTemp!!lastname}}
+    NickName={{$:/plugins/OokTech/Contacts/ContactTemp!!nickname}}
+    grouptag={{$:/plugins/OokTech/Contacts/ContactTemp!!group}}
+>
+    <$fieldmangler>
+        <$button>
+            Create Contact
+            <$action-setfield
+                $tiddler=<<getFullName>>
+                first_name={{$:/plugins/OokTech/Contacts/ContactTemp!!firstname}}
+                last_name={{$:/plugins/OokTech/Contacts/ContactTemp!!lastname}}
+                nick_name={{$:/plugins/OokTech/Contacts/ContactTemp!!nickname}}
+                personal_email_address={{$:/plugins/OokTech/Contacts/ContactTemp!!personalemailaddress}}
+                work_email_address={{$:/plugins/OokTech/Contacts/ContactTemp!!workemailaddress}}
+                other_email_address={{$:/plugins/OokTech/Contacts/ContactTemp!!otheremailaddress}}
+                home_phone_number={{$:/plugins/OokTech/Contacts/ContactTemp!!homephonenumber}}
+                work_phone_number={{$:/plugins/OokTech/Contacts/ContactTemp!!workphonenumber}}
+                cell_phone_number={{$:/plugins/OokTech/Contacts/ContactTemp!!cellphonenumber}}
+                street_address={{$:/plugins/OokTech/Contacts/ContactTemp!!streetaddress}}
+                country={{$:/plugins/OokTech/Contacts/ContactTemp!!country}}
+                state_or_provence={{$:/plugins/OokTech/Contacts/ContactTemp!!stateprovence}}
+                zip_code={{$:/plugins/OokTech/Contacts/ContactTemp!!zipcode}}
+                city={{$:/plugins/OokTech/Contacts/ContactTemp!!city}}
+                blurb={{$:/plugins/OokTech/Contacts/ContactTemp!!blurb}}
+                group={{$:/plugins/OokTech/Contacts/ContactTemp!!group}}
+                tags="Contacts"
+            />
+            <$action-setfield
+                $tiddler='$:/plugins/OokTech/Contacts/ContactTemp'
+                firstname=""
+                lastname=""
+                nickname=""
+                personalemailaddress=""
+                workemailaddress=""
+                otheremailaddress=""
+                homephonenumber=""
+                workphonenumber=""
+                cellphonenumber=""
+                streetaddress=""
+                country=""
+                stateprovence=""
+                zipcode=""
+                city=""
+                blurb=""
+            />
+        </$button>
+        <$button>
+            Clear Form
+            <$action-setfield
+                $tiddler='$:/plugins/OokTech/Contacts/ContactTemp'
+                firstname=""
+                lastname=""
+                nickname=""
+                personalemailaddress=""
+                workemailaddress=""
+                otheremailaddress=""
+                homephonenumber=""
+                workphonenumber=""
+                cellphonenumber=""
+                streetaddress=""
+                country=""
+                stateprovence=""
+                zipcode=""
+                city=""
+                blurb=""
+            />
+        </$button>
+    </$fieldmangler>
+</$vars>

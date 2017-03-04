@@ -1,0 +1,50 @@
+button_type:
+caption: Contacts List
+display_name: Sort Contacts By Group
+settings_tiddler: $:/plugins/OokTech/Contacts/GroupContactListTemplate Settings
+tags: Templates ContactListTemplate
+text_style: ''
+title: $:/plugins/OokTech/Contacts/GroupContactListTemplate
+
+\define allButtonMacro()
+
+<$reveal
+    type="nomatch"
+    state="$:/state/GroupContactListTemplateAll"
+    text="show"
+>
+
+!!<$button set="$:/state/GroupContactListTemplateAll" setTo="show" class={{$:/plugins/OokTech/Contacts/GroupContactListTemplate!!button_type}}>{{$:/core/images/right-arrow}}$(textstyle)$All$(textstyle)$</$button>
+</$reveal>
+<$reveal
+    type="match"
+    state="$:/state/GroupContactListTemplateAll"
+    text="show"
+>
+
+!!<$button set="$:/state/GroupContactListTemplateAll" setTo="hide" class={{$:/plugins/OokTech/Contacts/GroupContactListTemplate!!button_type}}>{{$:/core/images/down-arrow}}$(textstyle)$All$(textstyle)$</$button>
+<$list
+    filter="[tag[Contacts]!tag[Templates]]"
+    template={{$:/plugins/OokTech/Contacts/Contacts!!contact_display_template}}
+>
+</$reveal>
+
+</$list>
+
+\end
+
+<$list
+    filter="[tag[Contacts]sort[group]each[group]]"
+    template="$:/plugins/OokTech/Contacts/GroupContactListGroupTemplate"
+>
+    <$view
+        field="group"
+    />
+</$list>
+
+<$set
+    name="textstyle"
+    value={{$:/plugins/OokTech/Contacts/GroupContactListTemplate!!text_style}}
+>
+    <<allButtonMacro>>
+</$set>

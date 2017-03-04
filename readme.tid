@@ -1,0 +1,10 @@
+title: $:/plugins/OokTech/Contacts/readme
+
+This plugin is in the OokTech plugin library, you can add the library to your wiki by importing [[$:/pluginlibrary/OokTech/OokTechPlugins]] and then install the plugin using the `get more plugins` button in the $:/ControlPanel you can also import this plugin directly by importing the plugin tiddler [[$:/plugins/Ooktech/Contacts]]
+
+
+License: [[BSD 3 Clause|$:/plugins/OokTech/Contacts/License]]
+
+Creator: [[OokTech|$:/plugins/OokTech/OokTechInfo]]
+
+Source: [[GitHub|https://https://github.com/OokTech/TW5-Contacts]]

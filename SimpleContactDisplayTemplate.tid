@@ -1,0 +1,9 @@
+caption: Simple Contact Display Template
+display_name: Simple Contact Display Template
+home_phone_number: 1-555-555-555
+settings_tiddler: $:/plugins/OokTech/Contacts/SimpleContactDisplayTemplate Settings
+tags: Templates ContactDisplayTemplate
+title: $:/plugins/OokTech/Contacts/SimpleContactDisplayTemplate
+
+<$link to={{!!title}}>{{!!title}}</$link><br>
+{{!!home_phone_number}}<br>

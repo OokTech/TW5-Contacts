@@ -1,0 +1,31 @@
+blurb: One of the templates for displaying contacts
+button_type:
+display_name: Contact Display Template 1
+emailaddress: eddie@georges.com
+firstname: Billy
+lastname: Bob
+nickname: Joe
+no_edit: true
+phonenumber: 555-555-5555
+settings_tiddler: $:/plugins/OokTech/Contacts/ContactDisplayTemplate1 Settings
+tags: Templates ContactDisplayTemplate
+text_style: ''
+title: $:/plugins/OokTech/Contacts/ContactDisplayTemplate1
+
+<p>
+    <$tiddler
+        tiddler={{!!title}}
+    >
+        <$set
+            name="tiddlerName"
+            value={{!!title}}
+        >
+            <$set
+                name="textstyle1"
+                value={{$:/plugins/OokTech/Contacts/ContactDisplayTemplate1!!text_style}}
+            >
+                <<contactSlider {{$:/plugins/OokTech/Contacts/ContactDisplayTemplate1!!button_type}}>>
+            </$set>
+        </$set>
+    </$tiddler>
+</p>
